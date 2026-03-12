@@ -1,11 +1,719 @@
----
-layout: default
-title: "Luis Ernesto Prieto Amaro — Academic Portfolio"
-description: "PhD student in Hispanic-American and Film & Media Studies · Yale University"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luis Ernesto Prieto Amaro — Academic Portfolio</title>
+  <meta name="description" content="PhD Candidate in Hispanic-American and Film &amp; Media Studies · Yale University">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Luis Ernesto Prieto Amaro — Academic Portfolio">
+  <meta property="og:description" content="PhD Candidate in Hispanic-American and Film &amp; Media Studies · Yale University">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+/* ================================================================
+   Luis Ernesto Prieto Amaro — Academic Portfolio
+   Standalone stylesheet (all-in-one)
+   ================================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:         #0d1f38;
+  --navy-mid:     #1b3a5c;
+  --coral:        #c84b31;
+  --coral-light:  #fff0ec;
+  --teal:         #0e7f74;
+  --teal-light:   #e5f4f2;
+  --gold:         #b8860b;
+  --gold-light:   #fdf6e3;
+  --bg:           #faf8f4;
+  --bg-white:     #ffffff;
+  --text:         #1a1a2e;
+  --text-muted:   #607080;
+  --border:       #e3e8ef;
+  --radius:       10px;
+  --shadow:       0 1px 4px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:    0 6px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ── NAV ──────────────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 58px;
+  background: rgba(13, 31, 56, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+}
+
+.nav-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.1rem;
+}
+
+nav ul a {
+  display: block;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.8rem;
+  border-radius: 5px;
+  transition: all 0.18s;
+}
+
+nav ul a:hover,
+nav ul a.active {
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+}
+
+/* ── HERO ─────────────────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  background: linear-gradient(150deg, #071524 0%, #0d2340 40%, #122e50 70%, #0e2a47 100%);
+  display: flex;
+  align-items: center;
+  padding: 7rem 2.5rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-glow-coral {
+  position: absolute;
+  top: 10%; right: -5%;
+  width: 55%; height: 70%;
+  background: radial-gradient(ellipse at 60% 40%, rgba(200, 75, 49, 0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-glow-teal {
+  position: absolute;
+  bottom: -10%; left: -5%;
+  width: 50%; height: 60%;
+  background: radial-gradient(ellipse at 30% 70%, rgba(14, 127, 116, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* Hero splits into text (left) + photo (right) */
+.hero-inner {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-text { flex: 1; }
+
+/* ── Hero photo ── */
+.hero-photo-wrap {
+  flex-shrink: 0;
+  width: 220px;
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  /* subtle desaturation to blend with dark hero */
+  filter: grayscale(15%) contrast(1.05);
+}
+
+/* hide wrapper if no image is set */
+.hero-photo-wrap:empty,
+.hero-photo-wrap--hidden { display: none; }
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(200, 75, 49, 0.9);
+  margin-bottom: 1.75rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px; height: 2px;
+  background: var(--coral);
+}
+
+h1.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 8vw, 5.75rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.5rem;
+}
+
+h1.hero-name em {
+  font-style: italic;
+  color: rgba(255,255,255,0.78);
+}
+
+.hero-role {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.72);
+  font-weight: 300;
+  margin-bottom: 0.4rem;
+}
+
+.hero-inst {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 2.75rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.35rem;
+  border-radius: 100px;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.hero-btn.solid {
+  background: var(--coral);
+  color: #fff;
+  border: 2px solid var(--coral);
+}
+.hero-btn.solid:hover { background: #b04029; border-color: #b04029; transform: translateY(-1px); }
+
+.hero-btn.outline {
+  color: rgba(255,255,255,0.8);
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.hero-btn.outline:hover { border-color: rgba(255,255,255,0.5); color: #fff; transform: translateY(-1px); }
+
+/* LinkedIn gets a subtle teal tint */
+.hero-btn.linkedin {
+  color: rgba(255,255,255,0.8);
+  border: 2px solid rgba(14,127,116,0.5);
+}
+.hero-btn.linkedin:hover { border-color: var(--teal); color: #fff; background: rgba(14,127,116,0.15); transform: translateY(-1px); }
+
+/* ── MAIN ─────────────────────────────────────────────────────────── */
+main { max-width: 860px; margin: 0 auto; padding: 0 2.5rem; }
+
+/* ── SECTION ──────────────────────────────────────────────────────── */
+section.cv-section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+section.cv-section:last-child { border-bottom: none; }
+
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.65rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 2.75rem;
+}
+
+/* ── FADE-IN ──────────────────────────────────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESEARCH TAGS ────────────────────────────────────────────────── */
+.interests-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.itag {
+  display: inline-block;
+  font-size: 0.845rem;
+  font-weight: 500;
+  padding: 0.42rem 1.05rem;
+  border-radius: 100px;
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: default;
+}
+.itag:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.itag.red  { background: var(--coral-light); color: #8b2e1b; border: 1px solid rgba(200,75,49,0.2); }
+.itag.teal { background: var(--teal-light);  color: #085950; border: 1px solid rgba(14,127,116,0.2); }
+.itag.gold { background: var(--gold-light);  color: #7a5900; border: 1px solid rgba(184,134,11,0.2); }
+.itag.navy { background: #eef2f8;            color: #2a4a6c; border: 1px solid rgba(27,58,92,0.15); }
+
+/* ── TIMELINE ─────────────────────────────────────────────────────── */
+.timeline { padding-left: 2.25rem; position: relative; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--coral) 0%, var(--teal) 100%);
+  border-radius: 2px;
+}
+
+.tl-item { position: relative; margin-bottom: 2.25rem; }
+.tl-item:last-child { margin-bottom: 0; }
+
+.tl-dot {
+  position: absolute;
+  left: -2.25rem;
+  top: 5px;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: var(--bg-white);
+  border: 3px solid var(--coral);
+}
+.tl-item:nth-child(even) .tl-dot { border-color: var(--teal); }
+
+.tl-year {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.tl-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+
+.tl-sub { font-size: 0.875rem; color: var(--text-muted); }
+
+/* ── PUBLICATION GROUPS ───────────────────────────────────────────── */
+.pub-group { margin-bottom: 2.75rem; }
+.pub-group:last-child { margin-bottom: 0; }
+
+.pub-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid var(--teal-light);
+}
+.pub-group-head::before {
+  content: '';
+  width: 18px; height: 2px;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+/* ── PUB CARDS ────────────────────────────────────────────────────── */
+.pub-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius);
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 0.65rem;
+  transition: border-left-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.pub-card:hover {
+  border-left-color: var(--coral);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.pub-title {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+}
+.pub-title a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.18s, border-color 0.18s;
+}
+.pub-title a:hover { color: var(--coral); border-bottom-color: var(--coral); }
+
+.pub-meta { font-size: 0.815rem; color: var(--text-muted); line-height: 1.5; }
+.pub-meta a { color: var(--teal); text-decoration: none; }
+.pub-meta a:hover { text-decoration: underline; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.55rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+.badge.forth { background: var(--gold-light); color: #7a5900; }
+.badge.new25 { background: var(--coral-light); color: #8b2e1b; }
+
+/* ── CONFERENCE LIST ──────────────────────────────────────────────── */
+.conf-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.conf-item:last-child { border-bottom: none; }
+
+.conf-paper {
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+.conf-event { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+.conf-year {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--coral);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+
+/* ── AWARDS ───────────────────────────────────────────────────────── */
+.award-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius);
+  transition: background 0.18s;
+}
+.award-item:hover { background: var(--gold-light); }
+
+.award-yr {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 62px;
+  text-align: right;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.award-text { font-size: 0.88rem; color: var(--text); flex: 1; }
+.award-org  { font-size: 0.8rem;  color: var(--text-muted); }
+
+/* ── TWO-COLUMN SERVICE ───────────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+}
+
+.col-head {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy-mid);
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 2px solid var(--navy-mid);
+}
+
+/* ── SERVICE CARDS ────────────────────────────────────────────────── */
+.svc-cards { display: flex; flex-direction: column; }
+
+.svc-card {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.svc-card:last-child { border-bottom: none; }
+
+.svc-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--coral);
+  margin-top: 0.42em;
+  flex-shrink: 0;
+}
+
+.svc-body { min-width: 0; }
+
+.svc-desc {
+  font-size: 0.855rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 0.15rem;
+}
+
+.svc-org {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.svc-yr {
+  font-size: 0.695rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+  letter-spacing: 0.02em;
+}
+
+/* ── LEADERSHIP CARDS ─────────────────────────────────────────────── */
+.ldr-cards { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.ldr-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--coral);
+  border-radius: var(--radius);
+  padding: 0.95rem 1.2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s, border-left-color 0.2s;
+}
+.ldr-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--teal);
+}
+
+.ldr-body { flex: 1; min-width: 0; }
+
+.ldr-role {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+  margin-bottom: 0.2rem;
+}
+
+.ldr-org {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ldr-yr {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--coral);
+  background: var(--coral-light);
+  padding: 0.22rem 0.65rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  border: 1px solid rgba(200,75,49,0.18);
+}
+
+/* ── LANGUAGE CARDS ───────────────────────────────────────────────── */
+.lang-grid { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.lang-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.75rem;
+  text-align: center;
+  min-width: 140px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.lang-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.lang-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.2rem;
+}
+.lang-lvl { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; }
+
+.lang-dots { display: flex; justify-content: center; gap: 5px; margin-top: 0.65rem; }
+.ld { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+.ld.on { background: var(--teal); }
+
+/* ── FOOTER ───────────────────────────────────────────────────────── */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 3.5rem 2rem;
+  font-size: 0.85rem;
+}
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+footer a { color: rgba(255,255,255,0.75); text-decoration: none; }
+footer a:hover { color: #fff; }
+.footer-divider {
+  width: 40px; height: 2px;
+  background: var(--coral);
+  margin: 1.25rem auto;
+  border-radius: 2px;
+}
+
+/* ── SCROLL-TO-TOP BUTTON ─────────────────────────────────────────── */
+#top-btn {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 100;
+}
+#top-btn.show { opacity: 1; transform: translateY(0); }
+#top-btn:hover { background: var(--coral); }
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────── */
+@media (max-width: 820px) {
+  .hero-inner       { flex-direction: column-reverse; gap: 2.5rem; text-align: center; }
+  .hero-eyebrow     { margin: 0 auto 1.75rem; }
+  .hero-ctas        { justify-content: center; }
+  .hero-photo-wrap  { width: 160px; height: 200px; }
+}
+
+@media (max-width: 720px) {
+  nav ul    { display: none; }
+  .nav-name { font-size: 0.88rem; }
+  .two-col  { grid-template-columns: 1fr; gap: 2.5rem; }
+  .conf-item { grid-template-columns: 1fr; }
+  .conf-year { margin-top: -0.25rem; }
+  main       { padding: 0 1.25rem; }
+  #hero      { padding: 6rem 1.25rem 4rem; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ================================================================
+     EASY EDITING GUIDE
+     ─────────────────────────────────────────────────────────────────
+     • Personal info (name, email, title) → search "PERSONAL INFO"
+     • Headshot photo                     → search "HEADSHOT"
+     • Research interests                 → search "RESEARCH INTERESTS"
+     • Education                          → search "EDUCATION"
+     • Teaching                           → search "TEACHING"
+     • Conference presentations           → search "CONFERENCE"
+     • Publications                       → search "PUBLICATIONS"
+     • Fellowships & Awards               → search "AWARDS"
+     • Academic Service                   → search "ACADEMIC SERVICE"
+     • Leadership                         → search "LEADERSHIP"
+     • Languages                          → search "LANGUAGES"
+     ================================================================ -->
 
 <!-- ── NAV ──────────────────────────────────────────────────────── -->
 <nav>
+    <!-- PERSONAL INFO: update name in nav -->
     <span class="nav-name">Luis Ernesto Prieto Amaro</span>
     <ul>
         <li><a href="#research">Research</a></li>
@@ -23,15 +731,35 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
     <div class="hero-glow-teal"></div>
     <div class="hero-dots"></div>
     <div class="hero-inner">
-        <div class="hero-eyebrow">Academic Portfolio</div>
-        <h1 class="hero-name">Luis Ernesto<br><em>Prieto Amaro</em></h1>
-        <p class="hero-role">PhD Candidate · Hispanic-American and Film &amp; Media Studies</p>
-        <p class="hero-inst">Yale University &nbsp;·&nbsp; Expected 2030</p>
-        <div class="hero-ctas">
-            <a href="mailto:{{ site.author.email }}" class="hero-btn solid">&#9993;&nbsp; {{ site.author.email }}</a>
-            <a href="#publications" class="hero-btn outline">Publications</a>
-            <a href="#conferences" class="hero-btn outline">Presentations</a>
+
+        <!-- ── Text side ── -->
+        <div class="hero-text">
+            <div class="hero-eyebrow">Academic Portfolio</div>
+            <!-- PERSONAL INFO: update name, role, institution -->
+            <h1 class="hero-name">Luis Ernesto<br><em>Prieto Amaro</em></h1>
+            <p class="hero-role">PhD Candidate · Hispanic-American and Film &amp; Media Studies</p>
+            <p class="hero-inst">Yale University &nbsp;·&nbsp; Expected 2030</p>
+            <div class="hero-ctas">
+                <!-- PERSONAL INFO: update email -->
+                <a href="mailto:lpriet9@gmail.com" class="hero-btn solid">&#9993;&nbsp; lpriet9@gmail.com</a>
+                <!-- LinkedIn link -->
+                <a href="https://www.linkedin.com/in/luiseprieto1/" target="_blank" rel="noopener" class="hero-btn linkedin">&#128279;&nbsp; LinkedIn</a>
+                <a href="#publications" class="hero-btn outline">Publications</a>
+                <a href="#conferences" class="hero-btn outline">Presentations</a>
+            </div>
         </div>
+
+        <!-- ── HEADSHOT photo ──
+             To add your photo:
+             1. Copy your headshot image into this folder (e.g. "headshot.jpg")
+             2. Replace the src below with the filename, e.g. src="headshot.jpg"
+             3. Save and refresh — done!
+             ─────────────────────────────────────────────────── -->
+        <div class="hero-photo-wrap">
+            <img src="" alt="Luis Ernesto Prieto Amaro" class="hero-photo"
+                 onerror="this.parentElement.style.display='none'">
+        </div>
+
     </div>
 </section>
 
@@ -42,6 +770,8 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
     <div class="fade-in">
         <p class="section-label">Scholarly Focus</p>
         <h2 class="section-title">Research Interests</h2>
+        <!-- RESEARCH INTERESTS: add/remove <span class="itag ..."> tags
+             color classes: red · teal · gold · navy -->
         <div class="interests-wrap">
             <span class="itag red">Caribbean Literature</span>
             <span class="itag teal">Hispanic-American Studies</span>
@@ -62,6 +792,7 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
     <div class="fade-in">
         <p class="section-label">Academic Training</p>
         <h2 class="section-title">Education</h2>
+        <!-- EDUCATION: each <div class="tl-item"> is one degree -->
         <div class="timeline">
             <div class="tl-item">
                 <div class="tl-dot"></div>
@@ -96,6 +827,7 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
     <div class="fade-in">
         <p class="section-label">Pedagogy</p>
         <h2 class="section-title">Teaching Experience</h2>
+        <!-- TEACHING: each <div class="tl-item"> is one position -->
         <div class="timeline">
             <div class="tl-item">
                 <div class="tl-dot"></div>
@@ -118,6 +850,8 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
     <div class="fade-in">
         <p class="section-label">Scholarly Contributions</p>
         <h2 class="section-title">Conference Presentations</h2>
+        <!-- CONFERENCE: each <div class="conf-item"> is one talk
+             Update .conf-paper (title), .conf-event (venue/panel), .conf-year -->
         <div class="conf-list">
 
             <div class="conf-item">
@@ -169,6 +903,10 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
     <div class="fade-in">
         <p class="section-label">Scholarship</p>
         <h2 class="section-title">Publications</h2>
+
+        <!-- PUBLICATIONS: each <div class="pub-group"> is one category.
+             Each <div class="pub-card"> inside it is one publication.
+             Use <span class="badge forth"> or <span class="badge new25"> for status labels. -->
 
         <!-- Book Reviews -->
         <div class="pub-group">
@@ -298,6 +1036,8 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
         <p class="section-label">Recognition</p>
         <h2 class="section-title">Fellowships &amp; Awards</h2>
 
+        <!-- AWARDS: each <div class="award-item"> is one entry.
+             Update .award-yr (year), .award-text (title), .award-org (institution) -->
         <div class="award-item">
             <span class="award-yr">2025–27</span>
             <span class="award-text">Stella M. Hammond Planetary Solutions Fellowship <span class="award-org">· Yale University</span></span>
@@ -357,7 +1097,8 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
         <h2 class="section-title">Service &amp; Leadership</h2>
         <div class="two-col">
 
-            <!-- Academic Service -->
+            <!-- ACADEMIC SERVICE: each <div class="svc-card"> is one item.
+                 Update .svc-desc (role/event), .svc-org (institution), .svc-yr (year) -->
             <div>
                 <div class="col-head">Academic Service</div>
                 <div class="svc-cards">
@@ -473,7 +1214,8 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
                 </div>
             </div>
 
-            <!-- Leadership -->
+            <!-- LEADERSHIP: each <div class="ldr-card"> is one role.
+                 Update .ldr-role (title), .ldr-org (institution), .ldr-yr (year badge) -->
             <div>
                 <div class="col-head">Leadership</div>
                 <div class="ldr-cards">
@@ -530,6 +1272,8 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
     <div class="fade-in">
         <p class="section-label">Communication</p>
         <h2 class="section-title">Languages</h2>
+        <!-- LANGUAGES: each <div class="lang-card"> is one language.
+             .ld.on = filled dot (proficiency level, max 5) -->
         <div class="lang-grid">
             <div class="lang-card">
                 <div class="lang-name">Spanish</div>
@@ -570,12 +1314,55 @@ description: "PhD student in Hispanic-American and Film & Media Studies · Yale 
 </main>
 
 <!-- ── FOOTER ────────────────────────────────────────────────────── -->
+<!-- PERSONAL INFO: update name, institution, email in footer -->
 <footer>
-    <div class="footer-name">{{ site.author.name }}</div>
-    <p>PhD Candidate · {{ site.author.university }}</p>
+    <div class="footer-name">Luis Ernesto Prieto Amaro</div>
+    <p>PhD Candidate · Yale University</p>
     <div class="footer-divider"></div>
-    <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
-    <p style="margin-top:1.75rem; font-size:0.7rem; opacity:0.35;">&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</p>
+    <p><a href="mailto:lpriet9@gmail.com">lpriet9@gmail.com</a></p>
+    <p style="margin-top:1.75rem; font-size:0.7rem; opacity:0.35;">&copy; 2026 Luis Ernesto Prieto Amaro</p>
 </footer>
 
 <button id="top-btn" title="Back to top">&#8593;</button>
+
+<script>
+/* ================================================================
+   Luis Ernesto Prieto Amaro — Academic Portfolio
+   Inline JavaScript
+   ================================================================ */
+
+// ── Intersection Observer: section fade-in ────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Active nav link on scroll ─────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('nav ul a');
+
+function updateNav() {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}
+
+// ── Scroll-to-top button ──────────────────────────────────────────
+const topBtn = document.getElementById('top-btn');
+if (topBtn) {
+  topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+window.addEventListener('scroll', () => {
+  updateNav();
+  if (topBtn) topBtn.classList.toggle('show', window.scrollY > 500);
+}, { passive: true });
+</script>
+
+</body>
+</html>
