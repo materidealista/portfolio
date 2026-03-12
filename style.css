@@ -1,0 +1,381 @@
+/* Academic Professional Portfolio - Main Stylesheet */
+
+:root {
+  --primary-color: #1a3a52;
+  --secondary-color: #2c5aa0;
+  --accent-color: #d4af37;
+  --text-color: #333333;
+  --light-text: #666666;
+  --bg-color: #f8f9fa;
+  --border-color: #e0e0e0;
+  --footer-bg: #2a2a2a;
+  --font-serif: 'Georgia', 'Garamond', serif;
+  --font-sans: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-color);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.site-title a:hover {
+  color: var(--accent-color);
+}
+
+.site-nav {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.25rem;
+}
+
+.site-nav a:hover {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+/* Main Content */
+.page-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  font-style: italic;
+}
+
+/* Page Styles */
+.page,
+.post {
+  background-color: white;
+}
+
+.page-header,
+.post-header {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.page-title,
+.post-title {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.page-subtitle,
+.post-subtitle {
+  color: var(--light-text);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.post-meta {
+  color: var(--light-text);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.page-content,
+.post-content {
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.page-content h2,
+.post-content h2 {
+  color: var(--primary-color);
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1rem;
+}
+
+.page-content h3,
+.post-content h3 {
+  color: var(--secondary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.page-content p,
+.post-content p {
+  margin-bottom: 1rem;
+}
+
+.page-content ul,
+.page-content ol,
+.post-content ul,
+.post-content ol {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.page-content li,
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+.page-content a,
+.post-content a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.page-content a:hover,
+.post-content a:hover {
+  border-bottom-color: var(--secondary-color);
+}
+
+/* Code Blocks */
+.page-content code,
+.post-content code {
+  background-color: var(--bg-color);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #c7254e;
+}
+
+.page-content pre,
+.post-content pre {
+  background-color: var(--bg-color);
+  border-left: 4px solid var(--secondary-color);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.page-content pre code,
+.post-content pre code {
+  color: var(--text-color);
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Blockquotes */
+.page-content blockquote,
+.post-content blockquote {
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--light-text);
+  font-style: italic;
+}
+
+/* Tables */
+.page-content table,
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background-color: white;
+}
+
+.page-content th,
+.post-content th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.page-content td,
+.post-content td {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+}
+
+.page-content tr:nth-child(even),
+.post-content tr:nth-child(even) {
+  background-color: var(--bg-color);
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: var(--footer-bg);
+  color: #ffffff;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  border-top: 3px solid var(--accent-color);
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .site-nav {
+    gap: 1rem;
+  }
+
+  .site-nav a {
+    font-size: 0.85rem;
+  }
+
+  .page-content {
+    padding: 1.5rem;
+  }
+
+  .hero {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .page-title,
+  .post-title {
+    font-size: 1.8rem;
+  }
+
+  .page-content h2,
+  .post-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .page-content h3,
+  .post-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 1rem;
+  }
+
+  .site-title a {
+    font-size: 1.3rem;
+  }
+
+  .site-nav {
+    gap: 0.5rem;
+  }
+
+  .site-nav a {
+    font-size: 0.75rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .page-title,
+  .post-title {
+    font-size: 1.5rem;
+  }
+}
